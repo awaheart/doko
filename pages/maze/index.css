@@ -1,0 +1,38 @@
+body {
+    font-family: "Roboto Mono", monospace;
+    color: #222222;
+}
+
+table {
+    margin-left: auto;
+    margin-right: auto;
+
+    border-collapse: collapse;
+}
+  
+td {
+    padding: 2px;
+    font-size: 160%;
+    border: 2px solid transparent;
+}
+
+td * {
+    transition: all 1s;
+    font-size: inherit;
+    width: 1em;
+    height: 1em;
+    border-radius: 100%;
+}
+
+
+.on { background-color: #b65eff !important; }
+.done { background-color: #35343a !important; }
+.visited { background-color: #a3c0ff;  }
+.start * { background-color: #a0ffa0; }
+.end * { background-color: #ff8585; }
+.start *, .end * { border: 2px solid #cbc5d188; }
+
+.N { border-top: 2px solid #cbc5d188 }
+.E { border-right: 2px solid #cbc5d188 }
+.S { border-bottom: 2px solid #cbc5d188 }
+.W { border-left: 2px solid #cbc5d188 }

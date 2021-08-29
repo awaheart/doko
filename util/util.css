@@ -1,0 +1,76 @@
+/* Colors */
+:root {
+    --white:    #f2f4fa;
+    --red:      #f54242;
+    --orange:   #ff8c2d;
+    --yellow:   #ffe602;
+    --lime:     #9aff6b;
+    --green:    #00ff4c;
+    --cyan:     #46f9ff;
+    --blue:     #496aff;
+    --purple:   #b639ff;
+    --magenta:  #ee28bc;
+    --pink:     #ff97bf;
+}
+
+
+
+/* Dropdown Button */
+.util-dropdown > p {
+    margin: 0;
+
+    padding: 10px;
+    border: 2px solid #212735;
+    background-color: #b0b9d1;
+}
+.util-dropdown > p > i { transition: transform 0.5s; }
+
+.util-dropdown > div {
+    margin: 0;
+    list-style: none;
+    position: absolute;
+    display: flex;
+    flex-direction: column;
+
+    padding: 0;
+    border: 2px solid #212735;
+    background-color: #bbc3da;
+    width: max-content;
+}
+
+.util-dropdown > div > * {
+    padding: 10px;
+    display: block;
+    flex-grow: 1;
+    flex-shrink: 0;
+    flex-wrap: nowrap;
+    margin: 0;
+}
+
+.util-dropdown > div > *:hover {
+    background-color: #d2dcf8;
+}
+
+.util-dropdown {
+    user-select: none;
+    position: relative;
+    width: max-content;
+    height: max-content;
+}
+
+
+/* Dropdown Closed */
+.util-dropdown > div { visibility: hidden; z-index: 1; }
+
+/* Dropdown Open */
+.util-dropdown:focus-within > p > i { transform: rotate(180deg); }
+.util-dropdown:focus-within > div { visibility: visible; }
+
+
+
+
+/* - - - - - - - - - - - - - - */
+
+
+
+

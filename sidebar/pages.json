@@ -1,0 +1,24 @@
+[   
+    { "title": "Games", "pages": [
+        { "title": "Bounce", "id": "bounce", "desc": "Hello" },
+        { "title": "Snakey", "id": "snakey", "desc": "Hello" },
+        { "title": "Minesweeper", "id": "minesweeper", "desc": "Hello" },
+        { "title": "Platformer", "id": "platformer", "desc": "Hello" },
+        { "title": "Maze", "id": "maze", "desc": "Hello" },
+        { "title": "4 Color Remembering", "id": "4cr", "desc": "Hello" },
+        { "title": "Factory", "id": "factory", "desc": "Hello" }
+    ] },
+
+    { "title": "Tools", "pages": [
+        { "title": "Combinations", "id": "comb-calc", "desc": "Hello" },
+        { "title": "Color Preview", "id": "color-preview", "desc": "Hello" },
+        { "title": "Clock", "id": "clock", "desc": "Hello" },
+        { "title": "Home", "id": "../", "desc": "Hello" }
+    ] },
+
+    { "title": "", "pages": [
+        { "title": "Snow", "id": "snow", "desc": "Hello" },
+        { "title": "Small Problem", "id": "small-problem", "desc": "Hello" }
+    ] }
+    
+]

@@ -1,0 +1,80 @@
+<!DOCTYPE html>
+<html lang="en">
+    <head>
+
+
+        <!-- Meta -->
+        <meta charset="UTF-8">
+        <meta http-equiv="X-UA-Compatible" content="IE=edge">
+        <meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+
+        <!-- Display -->
+        <title>doko</title>
+        <link rel="shortcut icon" href="/images/logo.ico"/>
+        <link href="" rel="stylesheet"> 
+
+
+        <!-- Javascript and CSS -->
+        <script src="index.js"></script>
+        <link rel="stylesheet" href="index.css">
+
+
+        <!-- Other files -->
+        <script src="/sidebar/sidebar.js"></script>
+        <link href="/icons/css/all.css" rel="stylesheet">
+
+
+        <!-- Util -->
+        <script src="/util/util.js"></script>
+        <link href="/util/util.css" rel="stylesheet">
+
+
+    </head>
+    <body onload="init();">
+
+        <!-- Game Screens -->
+        <div id="start" class="screen">
+            <button class="startGame" onclick="startGame();">Start Game</button>
+
+            <div class="settings">
+                <div class="column">
+                    <p>Rows: </p>
+                    <p>Columns: </p>
+                    <p>Mines: </p>
+                    <p>Lives: </p>
+                </div>
+                <div class="column right">
+                    <input type="number" id="s-rows" value="10">
+                    <input type="number" id="s-cols" value="10">
+                    <input type="number" id="s-mines" value="15">
+                    <input type="number" id="s-lives" value="1">
+                </div>
+            </div>
+
+
+        </div>
+
+        <div id="win" class="screen">
+            <p>Happy you win :)</p>
+            <button class="startGame" onclick="startGame();">Start Game</button>
+        </div>
+
+        <div id="loose" class="screen">
+            <p>Sad you loose :(</p>
+            <button class="startGame" onclick="startGame();">Start Game</button>
+        </div>
+
+        <div id="game" class="screen" oncontextmenu="return false;">
+            <div class="stats">
+                <p id="time">Time: 0:00</p>
+                <p id="mines">Mines:</p>
+                <p id="lives">Lives:</p>
+            </div>
+            <table id="table"></table>
+        </div>
+
+<img src="images/bomb.png">
+        
+    </body>
+</html>

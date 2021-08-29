@@ -1,0 +1,107 @@
+body {
+    color: #222222;
+    font-family: FreeMono, monospace;
+}
+
+#page-content {
+    display: flex;
+    align-items: center;
+    flex-direction: column;
+    position: relative;
+}
+
+.column {
+    display: flex;
+    flex-direction: column;
+}
+
+.settings {
+    display: flex;
+    flex-direction: row;
+}
+
+.settings > * > * {
+    max-height: 40px;
+    padding: 0;
+    margin: 10px;
+}
+
+.settings input {
+    flex: 1 1;
+    max-width: 4em;
+}
+
+.screen {
+    flex-direction: column;
+
+    border: 5px solid #222222;
+    border-radius: 5px;
+
+    background-color: #e4edfa;
+
+    width: max-content;
+    height: max-content;
+    padding: 20px;
+    position: absolute;
+    display: none;
+}
+
+.screen.active {
+    display: flex;
+}
+
+img {
+    width: 30px;
+    height: 30px;
+}
+
+#table {
+    user-select: none;
+    border: 2px solid #222222;
+}
+
+/* Table Cells */
+#table td {
+    width: 30px;
+    height: 30px;
+    font-family: sans-serif;
+    border: 1px solid #22222244;
+    user-select: none;
+}
+
+#table td.shown {
+    box-shadow: 0.5px 0.5px 0px #5d5e63 inset;
+
+    cursor: unset;
+
+    background-color: #555a61;
+}
+
+#table td.shown:hover { background-color: #9c9ca3; }
+
+
+#table td {
+    box-shadow: -1px -1px 1px 1px #00000030 inset,
+    1px 1px 1px 1px #ffffff30 inset;
+    cursor: pointer;
+
+    background-color: #5b6066;
+}
+
+#table td:hover { background-color: #a2a7ad; }
+
+
+
+.startGame {
+    border: 2px solid #6d6d6d;
+    border-radius: 4px;
+    padding: 10px;
+    font-size: 15px;
+    width: max-content;
+    margin: auto;
+    transition: background-color 200;
+    
+    font-family: sans-serif;
+}
+
+.startGame:hover { background-color: #b8ffc8; }
