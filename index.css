@@ -1,34 +1,19 @@
 body {
-    color: #222222;
-    font-family: 'Source Code Pro', monospace;
-}
+    color: #13131A;
+    font-family: 'IBM Plex Mono', monospace;
+    font-weight: 400;
 
-.flex-grid {
+    background-color: #F7F7F7;
     display: flex;
-    flex-wrap: wrap;
-    justify-content: space-evenly;
-    align-content: center;
+    align-items: center;
+    justify-content: center;
+
+    width: 100vw;
+    height: 100vh;
+    margin: 0;
+    padding: 0;
 }
 
-.box {
-    flex: 0 0 auto;
-    margin: 40px;
-    display: flex;
-    padding: 5px;
-}
-
-.loading-wheel {
-    border-radius: 100%;
-    width: 50px;
-    height: 50px;
-    border: 6px solid;
-    animation: 1s spin alternate-reverse infinite ease-in-out;
-
-    border-color: #de38ff #2c2933 #2c2933 #2c2933;
-    box-shadow: 0 0 0 3px #4c00ff, 0 0 0 3px inset;
-}
-
-@keyframes spin { 
-    0% { transform: rotate(-360deg); }
-    100% { transform: rotate(360deg); border-color: #38c0ff #2c2933 #2c2933 #2c2933; }
+p {
+    font-size: 1.25em;
 }
