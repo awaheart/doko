@@ -1,0 +1,59 @@
+.navbar {
+    list-style: none;
+    padding: 0;
+    margin: 0;
+
+    position: absolute;
+    top: 0;
+    left: 0;
+
+    display: flex;
+    flex-direction: row;
+
+    margin: 10px;
+
+}
+
+.navbar * {
+    text-decoration: none;
+}
+    
+
+.navbar li {
+    font-size: 30px;
+
+    color: var(--primary2);
+
+    cursor: pointer;
+
+    display: flex;
+    align-content: center;
+    justify-content: center;
+    flex-direction: column;
+    flex-wrap: nowrap;
+}
+
+.navbar li:hover {
+    color: #36296c;
+    transition: color 0.3s;
+}
+
+.navbar li > * {
+    padding: 10px;
+}
+
+.navbar > *::after {
+    display: block;
+    content: "";
+    height: 3px;
+    box-shadow: 0 -4px 0 var(--primary2);
+    border-radius: 10px;
+
+    transform: scaleX(0);
+    transition: transform 0.2s ease-in-out, box-shadow 0.2s
+}
+
+.navbar > *:hover:after {
+    transform: scaleX(1);
+    box-shadow: 0 -4px 0 #36296c;
+}

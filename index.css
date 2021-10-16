@@ -1,17 +1,14 @@
-:root {
-    --dark: #F7F7F7;
-    --light: #13131A;
-}
-
 body {
-    color: var(--dark);
     font-family: 'IBM Plex Mono', monospace;
     font-weight: 400;
 
-    background-color: var(--light);
+    background-color: var(--primary1);
+    color: var(--primary2);
+
     display: flex;
     align-items: center;
     justify-content: center;
+    flex-direction: column;
 
     width: 100vw;
     height: 100vh;
@@ -21,14 +18,14 @@ body {
 
 p {
     font-size: 1.25em;
-    animation: spin 1s ease-in-out infinite alternate;
+    animation: spin 1s linear infinite;
 }
 
 @keyframes spin {
-    from {
-        transform: rotate(30deg);
+    0% {
+        transform: rotate(-360deg);
     }
-    to {
-        transform: rotate(-30deg)
+    100% {
+        transform: rotate(0deg)
     }
 }

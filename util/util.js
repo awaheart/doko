@@ -17,10 +17,6 @@ const Util = {};
     const pause = (ms) => new Promise((res) => setTimeout(res, ms));
     Util.pause = pause;
 
-    // Dark theme
-    const toggleDarkmode = () => document.querySelectorAll("*").classList.toggle("darkmode");
-    Util.toggleDarkmode = toggleDarkmode;
-
 
     // Random background color
     const bgColor = () => {
@@ -141,7 +137,7 @@ const Util = {};
     // Terminal
     class Terminal {
         constructor(elem) {
-            3
+            3; // why is there a 3 here?
         }
     }
 
