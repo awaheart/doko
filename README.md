@@ -1,2 +1,2 @@
 # doko
-steal this code
+maybe legally allowed to steal all this code maybe
