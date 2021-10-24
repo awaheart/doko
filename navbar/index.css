@@ -1,9 +1,253 @@
+/* Main Container */
+.nav-container {
+    position: fixed;
+    top: 0;
+    left: 0;
+
+    font-family: 'IBM Plex Sans', fantasy;
+    font-weight: 400;
+    font-size: 15px;
+
+    display: flex;
+    flex-direction: column;
+    height: 100vh;
+    width: max-content;
+}
+
+
+
+/* Navbar */
 .navbar {
+    display: flex;
+    flex-direction: row;
+
+    margin: 0;
+    padding: 5px;
+
+    background: linear-gradient(to right, var(--secondary1) 50%, #0000 50%);
+    background-size: 205% 105%;
+    background-position: bottom right;
+
+    transition: transform 100ms ease-in-out;
+    transition-property: background, color;
+}
+
+.nav-container.active .navbar {
+    color: var(--primary1);
+    background-position: bottom left;
+}
+
+.navbar > * {
+    height: 50px;
+    
+    margin: 0 5px 5px;
+    padding: 5px;
+
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    flex-direction: column;
+
+    transition: color 0.2s;
+
+    cursor: pointer;
+
+    text-decoration: none;
+    font-size: 2.2em;
+    color: inherit;
+
+    text-decoration: none;
+    border: none;
+}
+
+.navbar > *:hover {
+    color: #3c2e77;
+}
+
+.nav-container.active .navbar > *:hover::after {
+    box-shadow: 0 -4px 0 var(--primary-color);
+    width: 120%;
+}
+
+.nav-container.active .navbar > *:hover {
+    color: var(--primary-color);
+}
+
+.navbar > *::after {
+    margin-top: 5px;
+
+    display: flex;
+    content: "";
+    height: 4px;
+    width: 0;
+    box-shadow: 0 -4px 0 var(--secondary1);
+
+    border-radius: 10px;
+
+    transition: width 0.2s ease-in-out, box-shadow 0.2s
+}
+
+.navbar > *:hover::after {
+    box-shadow: 0 -4px 0 #3c2e77;
+    width: 120%;
+}
+
+
+
+/* Sidebar */
+.sidebar {
+    border-top: 4px solid var(--primary-color);
+
+    display: flex;
+    flex-direction: column;
+    overflow-y: scroll;
+
+    transform: translateX(-105%);
+    transition: transform 100ms ease-in-out;
+    
+    min-width: 20vw;
+    width: max-content;
+    height: 100vh;
+    margin: 0;
+    padding: 20px;
+
+    list-style: none;
+    color: var(--primary1);
+    background-color: var(--secondary1);
+}
+
+.nav-container.active .sidebar {
+    transform: translate(0);
+}
+
+.sidebar * {
+    padding: 10px;
+
+    color: inherit;
+    text-decoration: none;
+    text-align: center;
+}
+
+.sidebar-page {
+    cursor: pointer;
+
+    background: linear-gradient(to right, var(--primary-color) 50%, #0000 50%);
+    background-size: 205% 105%;
+    background-position: bottom right;
+
+    transition:  200ms ease-in-out;
+    transition-property: background, color;
+}
+
+.sidebar-page:hover {
+    font-weight: bolder;
+    background-position: bottom left;
+    color: var(--secondary1);
+}
+
+.sidebar-title {
+    margin: 15px 0 5px;
+
+    font-size: 1.2em;
+    border-bottom: 2px solid var(--primary-color);
+}
+
+/* super cool and epic custom scrollbar */
+.sidebar::-webkit-scrollbar{
+    width: 20px;
+}.sidebar::-webkit-scrollbar-thumb{
+    background: var(--secondary2);
+    border: 4px solid var(--secondary2);
+    box-shadow: 0 0 10px 2px #8181816e inset;
+}.sidebar::-webkit-scrollbar-thumb:hover{
+    background: var(--secondary3);
+}.sidebar::-webkit-scrollbar-track{
+    background: var(--secondary2);
+}
+
+
+
+
+/* Sidebar
+.sidebar {
+    display: flex;
+    flex-direction: column;
+
+    transform: translateX(-105%);
+    transition: transform 200ms linear;
+
+    width: max-content;
+    height: 100vh;
+    margin: 0;
+    padding: 20px;
+
+    color: var(--primary1);
+    background-color: var(--secondary1);
+    list-style: none;
+
+}
+
+.nav-container.active .sidebar {
+    transform: translateX(0)
+}
+
+.nav-container .sidebar-title {
+    color: inherit;
+    text-align: center;
+    border-bottom: 2px solid var(--primary-color);
+    padding: 10px;
+    margin: 10px 0;
+    font-size: 20px;
+}
+
+.nav-container .sidebar-page {
+    padding: 5px 10px;
+    cursor: pointer;
+    text-align: center;
+    flex-grow: 1;
+
+    background: linear-gradient(to right, var(--primary-color) 50%, #0000 50%);
+    background-size: 205% 105%;
+    background-position: bottom right;
+    transition:  200ms ease-in-out;
+    transition-property: background, color;
+}
+
+
+.nav-container .sidebar-page:hover {
+    background-position: bottom left;
+    color: var(--secondary1);
+}
+
+.nav-container .sidebar-page a {
+    color: inherit;
+    text-decoration: none;
+}
+
+/*
+.sidebar.sidebar-active {
+    position: fixed;
+    list-style: none;
+    left: 0;
+    top: 0;
+    height: 100vh;
+    padding-top: 20px;
+    min-width: 20%;
+    width: max-content;
+    margin: 0;
+    color: var(--primary1);
+    padding: 20px;
+    overflow-y: scroll;
+    background-color: var(--secondary1);
+}
+
+
+/* .navbar {
     list-style: none;
     padding: 0;
     margin: 0;
 
-    position: absolute;
+    position: fixed;
     top: 0;
     left: 0;
 
@@ -22,7 +266,7 @@
 .navbar li {
     font-size: 30px;
 
-    color: var(--primary2);
+    color: var(--secondary1);
 
     cursor: pointer;
 
@@ -34,8 +278,12 @@
 }
 
 .navbar li:hover {
-    color: #36296c;
+    color: #3c2e77;
     transition: color 0.3s;
+}
+
+.navbar li * {
+    color: inherit;
 }
 
 .navbar li > * {
@@ -45,8 +293,8 @@
 .navbar > *::after {
     display: block;
     content: "";
-    height: 3px;
-    box-shadow: 0 -4px 0 var(--primary2);
+    height: 4px;
+    box-shadow: 0 -4px 0 var(--secondary1);
     border-radius: 10px;
 
     transform: scaleX(0);
@@ -55,5 +303,5 @@
 
 .navbar > *:hover:after {
     transform: scaleX(1);
-    box-shadow: 0 -4px 0 #36296c;
-}
+    box-shadow: 0 -4px 0 #3c2e77;
+} */
