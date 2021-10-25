@@ -2,6 +2,8 @@ function initNavbar(params) {
 
 const html = `
 <!-- Navbar Inseted Via Javascript Code -->
+<link rel="stylesheet" href="navbar/index.css">
+
 <div class="nav-container">
 <div class="navbar">
     <p onclick="toggleSidebar()"><i class="fas fa-bars"></i></p>

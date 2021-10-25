@@ -16,6 +16,18 @@ body {
     flex-grow: 1;
     align-items: center;
     justify-content: center;
+
+}
+/* * {
+    filter: blur(0.2px);
+} */
+   
+#a {
+    text-decoration: none;
+}
+
+#a {
+    color: unset;
 }
 
 /* body {
@@ -43,9 +55,6 @@ body {
     animation: spin 1s linear infinite;
 }
 
-body * {
-    animation: spin 5s linear infinite;
-}
 
 @keyframes spin {
     0% {
