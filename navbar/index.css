@@ -12,6 +12,12 @@
     flex-direction: column;
     height: 100vh;
     width: max-content;
+
+}
+
+.nav-container.active {
+    transition: box-shadow 200ms ease-in;
+    box-shadow: 5px 0px 15px 0px #00000065;
 }
 
 
@@ -24,11 +30,11 @@
     margin: 0;
     padding: 5px;
 
-    background: linear-gradient(to right, var(--secondary1) 50%, #0000 50%);
+    background: linear-gradient(to right, var(--secondary1) 50%, transparent 50%);
     background-size: 205% 105%;
     background-position: bottom right;
 
-    transition: transform 100ms ease-in-out;
+    transition: transform 150ms ease-in-out;
     transition-property: background, color;
 }
 
@@ -38,8 +44,10 @@
 }
 
 .navbar > * {
-    height: 50px;
-    
+    min-height: 50px;
+    min-width: 40px;
+
+
     margin: 0 5px 5px;
     padding: 5px;
 
@@ -58,23 +66,29 @@
 
     text-decoration: none;
     border: none;
+
+    background: none;
+    box-sizing: unset;
 }
 
-.navbar > *:hover {
+.navbar > *:hover,
+.navbar > *:focus {
     color: #3c2e77;
 }
 
-.nav-container.active .navbar > *:hover::after {
+.nav-container.active .navbar > *:hover::after,
+.nav-container.active .navbar > *:focus::after {
     box-shadow: 0 -4px 0 var(--primary-color);
     width: 120%;
 }
 
-.nav-container.active .navbar > *:hover {
+.nav-container.active .navbar > *:hover,
+.nav-container.active .navbar > *:focus {
     color: var(--primary-color);
 }
 
 .navbar > *::after {
-    margin-top: 5px;
+    margin-top: 7px;
 
     display: flex;
     content: "";
@@ -86,8 +100,8 @@
 
     transition: width 0.2s ease-in-out, box-shadow 0.2s
 }
-
-.navbar > *:hover::after {
+.navbar > *:hover::after,
+.navbar > *:focus::after {
     box-shadow: 0 -4px 0 #3c2e77;
     width: 120%;
 }
@@ -102,8 +116,8 @@
     flex-direction: column;
     overflow-y: scroll;
 
-    transform: translateX(-105%);
-    transition: transform 100ms ease-in-out;
+    transform: translate(-105%, 105%);
+    transition: transform 150ms ease-in-out;
     
     min-width: 20vw;
     width: max-content;
@@ -120,6 +134,14 @@
     transform: translate(0);
 }
 
+.nav-container.active .sidebar * {
+    visibility: visible;
+}
+
+.nav-container .sidebar * {
+    visibility: hidden;
+}
+
 .sidebar * {
     padding: 10px;
 
@@ -130,6 +152,7 @@
 
 .sidebar-page {
     cursor: pointer;
+    text-align: left;
 
     background: linear-gradient(to right, var(--primary-color) 50%, #0000 50%);
     background-size: 205% 105%;
@@ -139,7 +162,8 @@
     transition-property: background, color;
 }
 
-.sidebar-page:hover {
+.sidebar-page:hover,
+.sidebar-page:focus {
     font-weight: bolder;
     background-position: bottom left;
     color: var(--secondary1);

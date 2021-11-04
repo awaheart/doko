@@ -3,12 +3,12 @@ const Util = {};
 // No variables can escape here
 (() => {
 
-    // Randrange
+    // Randrange min: inclusive, max: exlusive
     const randrange = (min, max) => Math.floor(Math.random() * (max + 1 - min) + min);
     Util.randrange = randrange;
 
 
-    // Random
+    // Random array item
     const random = (arr) => arr[Math.floor(Math.random() * arr.length)];
     Util.random = random;
 
@@ -18,20 +18,49 @@ const Util = {};
     Util.pause = pause;
 
 
-    // Random background color
-    const bgColor = () => {
-        const colors = ["#f79292", "#f7b992", "#fced88", "#f5ff96", "#8cffa1", "#8cffcd", "#b5faff", "#b5d4ff", "#b6b5ff", "#dcb5ff", "#ebb5ff", "#fdb5ff"];
-        const color = colors[Math.floor(Math.random() * colors.length)];
+    // Canvas Game Engine
+    class CanvasEngine {
+        constructor(selector, width, height, options) {
+            this.canvas = document.querySelector(selector);
 
-        document.body.style.transition = "background-color 2s";
-        document.body.style.backgroundColor = color;
-        return color;
-    };
-    Util.bgColor = bgColor;
+            this.width = width;
+            this.height = height;
+            this.objects = [];
+
+            Object.assign(this, options);
+
+
+            this.canvas.width = this.width;
+            this.canvas.height = this.height;
+
+            this.draw();
+        }
+
+        newObject(type, obj) {
+            switch (type) {
+                case value:
+
+                    break;
+
+            }
+        }
+
+        draw() {
+            const c = this.canvas;
+            const ctx = c.getContext("2d");
+            ctx.beginPath();
+            ctx.arc(100, 75, 50, 0, 2 * Math.PI);
+            ctx.stroke();
+        }
+    }
+
+
+    Util.CanvasEngine = CanvasEngine;
 
 
 
-    // Configurable table
+
+    /* Configurable table
     class Table {
         constructor(elem, rows, cols) {
             this.elem = elem;
@@ -140,5 +169,5 @@ const Util = {};
             3; // why is there a 3 here?
         }
     }
-
+    */
 })();

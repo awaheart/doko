@@ -1,13 +1,16 @@
 /* Colors */
 :root {
     --primary1: #eff3f5;
+    --primary2: #d0d5d8;
+    --primary3: #c1c5c7;
+    --primary4: #a6abad;
     
     --secondary1: #1e1e27;
     --secondary2: #333344;
     --secondary3: #43435a;
     --secondary4: #494964;
 
-    --primary-color: #e6dd45;
+    --primary-color: #e7d740;
 
     --white:    #f2f4fa;
     --red:      #ee3232;
@@ -20,4 +23,11 @@
     --purple:   #b639ff;
     --magenta:  #ee28bc;
     --pink:     #ff97bf;
+}
+
+noscript {
+    color: red;
+    top: 0;
+    font-size: 3vw;
+    position: fixed;
 }
