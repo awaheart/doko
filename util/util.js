@@ -8,14 +8,33 @@ const Util = {};
     Util.randrange = randrange;
 
 
+
     // Random array item
     const random = (arr) => arr[Math.floor(Math.random() * arr.length)];
     Util.random = random;
 
 
+
     // Pause
     const pause = (ms) => new Promise((res) => setTimeout(res, ms));
     Util.pause = pause;
+
+
+
+	// Customizable Grid
+	class Grid {
+		constructor(selector, width, height) {
+			this.element = document.querySelector(selector);
+
+			// Fill the table with cells
+			for (let i = 0; i < array.length; i++) {
+				const element = array[i];
+
+			}
+		}
+	}
+	Util.Grid = Grid;
+
 
 
     // Canvas Game Engine
@@ -34,29 +53,97 @@ const Util = {};
             this.canvas.height = this.height;
 
             this.draw();
+
+            // Main loop
+            this.fps = 0;
+            this.maxfps = 30;
+
+            const frame = async () => {
+                // Limit FPS
+                let ms = 0;
+                setInterval(() => ms += 1, 1);
+                setTimeout(frame, (1000 / this.maxfps) - ms);
+
+                // Calculate FPS
+                this.fps += 1;
+                setTimeout(() => this.fps -= 1, 1000);
+
+                this.objects.forEach((object) => object.update());
+                this.objects.forEach((object) => object.draw());
+            };
+            frame();
         }
 
-        newObject(type, obj) {
-            switch (type) {
-                case value:
+        newObject(obj) {
+            const object = new CanvasEngineObject(this, obj);
 
-                    break;
-
-            }
+            return object;
         }
 
         draw() {
             const c = this.canvas;
             const ctx = c.getContext("2d");
+            ctx.lineWidth = 5;
             ctx.beginPath();
             ctx.arc(100, 75, 50, 0, 2 * Math.PI);
             ctx.stroke();
         }
     }
 
+    class CanvasEngineObject {
+        constructor(parent, obj) {
+
+
+            const defaults = {
+                gravity: false,
+                collision: false,
+
+                xvel: 0,
+                yvel: 0,
+                x: 0,
+                y: 0,
+
+                display: {
+                    color: "#ff0000",
+
+                    borderWidth: 0,
+                    borderColor: "#000000",
+
+                    type: 0,
+                },
+            };
+
+            Object.assign(this, defaults);
+            Object.assign(this, obj);
+
+            console.log(this);
+        }
+
+        update() {
+
+
+            // Draw
+            this.draw();
+        }
+
+        draw() {
+            const canvas = this.canvas;
+            const ctx = canvas.getContext("2d");
+
+            ctx.beginPath();
+
+            if (this.display.borderWidth !== 0) {
+                ctx.lineWidth = this.display.borderWidth;
+                ctx.strokeStyle = this.display.borderColor;
+            }
+
+            ctx.color;
+            ctx.arc(100, 75, 50, 0, 2 * Math.PI);
+            ctx.stroke();
+        }
+    }
 
     Util.CanvasEngine = CanvasEngine;
-
 
 
 

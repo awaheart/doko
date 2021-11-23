@@ -1,7 +1,11 @@
 async function init() {
     await initNavbar();
 
-    const canvas = new Util.CanvasEngine(".canvas", 500, 500);
+    const canvas = new Util.CanvasEngine(".canvas", 2500, 2500);
 
-    canvas.newObject("ball", "10");
+    const e = canvas.newObject({
+      x: 10,
+      y: 10,
+      gravity: true,
+    });
 }
