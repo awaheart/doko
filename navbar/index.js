@@ -5,8 +5,8 @@ async function initNavbar(params) {
     // Construct the pages
     pages = pages.map((page) => {
         return page.link
-        ? `<a data-title="${page.desc}" href="/pages/${page.link}" class="sidebar-page">${page.name}</a>`
-        : `<p data-title="${page.desc}" class="sidebar-title">${page.name}</p>`;
+        ? `<a ${page.desc ? `data-title="${page.desc}"` : ""} href="/pages/${page.link}" class="sidebar-page"><p>${page.name}</p><div></div></a>`
+        : `<p ${page.desc ? `data-title="${page.desc}"` : ""} class="sidebar-title">${page.name}</p>`;
     });
 
     // Construct the navbar
@@ -14,7 +14,7 @@ async function initNavbar(params) {
     <!-- Navbar Inseted Via Javascript Code -->
     <link rel="stylesheet" href="/navbar/index.css">
 
-    <div class="nav-container">
+    <nav class="nav-container">
         <div class="navbar">
             <button onclick="toggleSidebar()"><i class="fas fa-bars"></i></button>
             <a href="/"><i class="fas fa-home"></i></a>
@@ -23,7 +23,7 @@ async function initNavbar(params) {
         <div class="sidebar">
             ${pages.join("")}
         </div>
-    </div>
+    </nav>
     `.replace(/\n/g, "");
 
     document.body.innerHTML += nav;

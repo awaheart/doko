@@ -1,5 +1,10 @@
 [   
     {
+        "name": "Terminal Test",
+        "link": "test2",
+        "desc": "undefined"
+    },
+    {
         "name": "The Testing Category",
         "desc": "This is a category for testing stuff?"
     },

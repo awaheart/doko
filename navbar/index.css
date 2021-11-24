@@ -142,7 +142,7 @@
     visibility: hidden;
 }
 
-.sidebar * {
+.sidebar > * {
     padding: 10px;
 
     color: inherit;
@@ -152,15 +152,30 @@
 
 .sidebar-page {
     cursor: pointer;
-    text-align: center;
+    display: flex;
     flex-direction: row;
+    justify-content: center;
 
     background: linear-gradient(to right, var(--primary-color) 50%, #0000 50%);
     background-size: 205% 105%;
     background-position: bottom right;
 
-    transition:  200ms ease-in-out;
+    transition: 200ms ease-in-out;
     transition-property: background, color;
+}
+
+.sidebar-page p {
+    width: max-content;
+    margin: 0;
+}
+
+.sidebar-page div {
+    transition: flex-grow 200ms;
+    flex-grow: 1;
+}
+
+.sidebar-page:hover div {
+    flex-grow: 0;
 }
 
 .sidebar-page:hover,
@@ -168,11 +183,6 @@
     font-weight: bolder;
     background-position: bottom left;
     color: var(--secondary1);
-}
-
-.sidebar-page:hover > *,
-.sidebar-page:focus-visible > * {
-    width: 0;
 }
 
 .sidebar-title {
@@ -187,11 +197,10 @@
 /* super cool and epic hover descriptions */
 .sidebar > *[data-title]:hover:after {
     opacity: 1;
-    transition: opacity 200ms ease 0.5s;
     visibility: visible;
 }
 .sidebar > *[data-title]:after {
-    transition: opacity 200ms ease 0.5s;
+    transition: opacity 250ms ease 600ms;
     content: attr(data-title);
     position: absolute;
     visibility: hidden;
