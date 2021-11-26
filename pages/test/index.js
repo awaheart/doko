@@ -1,5 +1,6 @@
 async function init() {
     await initNavbar();
+    await Util.updateDarkMode();
 
     const canvas = new Util.CanvasEngine(".canvas", 2500, 2500);
 

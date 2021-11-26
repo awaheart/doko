@@ -17,7 +17,15 @@ body {
     align-items: center;
     justify-content: center;
 
+    transition: 500ms ease;
+    transition-property: background-color, color;
 }
+
+body.darkMode {
+    background-color: var(--secondary1);
+    color: var(--primary1);
+}
+
 /* * {
     filter: blur(0.2px);
 } */

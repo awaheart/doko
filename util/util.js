@@ -21,6 +21,30 @@ const Util = {};
 
 
 
+    // Dark Mode
+    const updateDarkMode = () => {
+        [...document.body.querySelectorAll("*"), document.body]
+        .forEach((elem) => {
+            window.localStorage.darkMode === "true"
+            ? elem.classList.add("darkMode")
+            : elem.classList.remove("darkMode");
+        });
+    };
+
+    const toggleDarkMode = () => {
+        window.localStorage.darkMode === "true"
+        ? window.localStorage.setItem("darkMode", false)
+        : window.localStorage.setItem("darkMode", true);
+
+        console.log(window.localStorage);
+        updateDarkMode();
+    };
+
+    Util.toggleDarkMode = toggleDarkMode;
+    Util.updateDarkMode = updateDarkMode;
+
+
+
 	// Customizable Grid
 	class Grid {
 		constructor(selector, width, height) {
