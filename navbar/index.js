@@ -16,7 +16,7 @@ async function initNavbar(params) {
 
     <nav class="nav-container">
         <div class="navbar">
-            <button onclick="toggleSidebar()"><i class="fas fa-bars"></i></button>
+            <button onclick="toggleSidebar()" class="navbar-stick"><i class="fas fa-bars"></i></button>
             <a href="/"><i class="fas fa-home"></i></a>
             <button onclick="Util.toggleDarkMode()"><i class="fas fa-adjust"></i></button>
         </div>

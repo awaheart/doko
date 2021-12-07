@@ -47,7 +47,6 @@
     min-height: 50px;
     min-width: 40px;
 
-
     margin: 0 5px 5px;
     padding: 5px;
 
@@ -56,7 +55,7 @@
     justify-content: center;
     flex-direction: column;
 
-    transition: color 0.2s;
+    transition: color 200ms;
 
     cursor: pointer;
 
@@ -71,9 +70,27 @@
     box-sizing: unset;
 }
 
+.navbar > *:not(.navbar-stick) {
+    opacity: 0;
+    visibility: hidden;
+
+    transition: 300ms ease;
+    transition-property: opacity visibility;
+}
+
+.nav-container.active .navbar > *:not(.navbar-stick) {
+    opacity: 100%;
+    visibility: visible;
+}
+
 .navbar > *:hover,
 .navbar > *:focus-visible {
     color: #3c2e77;
+}
+
+.navbar.darkMode > *:hover,
+.navbar.darkMode > *:focus-visible {
+    color: #8982e7;
 }
 
 .nav-container.active .navbar > *:hover::after,
@@ -105,6 +122,11 @@
     box-shadow: 0 -4px 0 #3c2e77;
     width: 120%;
 }
+.navbar.darkMode > *:hover::after,
+.navbar.darkMode > *:focus-visible::after {
+    box-shadow: 0 -4px 0 #8982e7;
+    width: 120%;
+}
 
 
 
@@ -117,7 +139,7 @@
     overflow-y: scroll;
     overflow-x: hidden;
     transform: translateX(-105%);
-    transition: transform 150ms ease-in-out;
+    transition: transform 150ms ease;
     
     min-width: 20vw;
     width: max-content;
